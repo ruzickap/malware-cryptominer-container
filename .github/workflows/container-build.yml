@@ -30,6 +30,8 @@ on:
   schedule:
     - cron: "0 0 * * 1"
 
+permissions: read-all
+
 jobs:
   container-build-pipeline:
     name: "💡 ${{ matrix.container_image_dockerfile_location }}"
