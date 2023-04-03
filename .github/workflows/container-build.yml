@@ -28,7 +28,7 @@ on:
       # For code tagging use 'v' prefix, but 'v' prefix should not be part of container tag
       - "v[0-9]+.[0-9]+.[0-9]+*"
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 0 * * 0"
 
 permissions:
   actions: read
