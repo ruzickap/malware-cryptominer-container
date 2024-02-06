@@ -1,5 +1,5 @@
 ---
-name: MegaLinter
+name: mega-linter
 
 on:
   workflow_dispatch:
@@ -10,8 +10,7 @@ on:
 permissions: read-all
 
 jobs:
-  build:
-    name: MegaLinter
+  mega-linter:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -28,7 +27,7 @@ jobs:
         run: |
           set -euxo pipefail
           echo '#!/usr/bin/env bash' > README.sh
-          find . -name '*.md' -print0 | while IFS= read -r -d '' FILE ; do
+          find . -name '*.md' -print0 | while IFS= read -r -d '' FILE; do
             # Extract: ```bash ... ```
             sed -n "/^\`\`\`\(bash\|shell\)$/,/^\`\`\`$/p" "${FILE}" | sed '/^```*/d' >> README.sh
             # Extract:   ```bash ... ```
